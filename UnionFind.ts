@@ -24,7 +24,7 @@ class UnionFind implements IUnionFind {
     private n: number;
     private pointSets: number[];
 
-    public UnionFind(n: number) {
+    public constructor(n: number) {
         this.n = n;
         this.pointSets = [n];
         // for (let i: number = 0; i < n; i++) this.pointSets[i] = i;
@@ -32,11 +32,11 @@ class UnionFind implements IUnionFind {
 
     }
 
-    getPointset() {
+    public getPointset() {
         return this.pointSets;
     }
 
-    union(p: number, q: number): number[] {
+    public union(p: number, q: number): number[] {
         let setOfp: number = this.pointSets[p];
         let setOfq: number = this.pointSets[q];
 
@@ -47,22 +47,20 @@ class UnionFind implements IUnionFind {
         return this.pointSets;
     }
 
-    find(p: number): number {
+    public find(p: number): number {
         return this.pointSets[p];
     }
 
-    connected(p: number, q: number): boolean {
+    public connected(p: number, q: number): boolean {
         return this.find(p) == this.find(q);
     }
 
-    count(): number {
+    public count(): number {
         return this.n;
     }
 }
 
-// UnionFind.prototype.UnionFind(100);
-let ojago = new UnionFind();
-ojago.UnionFind(10);
+let ojago = new UnionFind(10);
 
 console.log("Untouched set = " + ojago.getPointset())
 console.log("Union = " + ojago.union(0,9));
