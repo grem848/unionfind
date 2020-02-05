@@ -29,7 +29,6 @@ class UnionFind implements IUnionFind {
         this.pointSets = [n];
         // for (let i: number = 0; i < n; i++) this.pointSets[i] = i;
         for (let i: number = 0; i < n; i++) this.pointSets[i] = Math.round(Math.random() * 100);
-
     }
 
     public getPointset() {
